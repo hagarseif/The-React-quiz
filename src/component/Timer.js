@@ -8,7 +8,7 @@ function Timer({ dispatch, timeRemaining }) {
       dispatch({ type: "tick" });
     }, 1000);
     return ()=>clearInterval(id)
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
