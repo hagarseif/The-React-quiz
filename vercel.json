@@ -2,10 +2,10 @@
     "version": 2,
     "builds": [
       {
-        "src": "react-quiz/package.json",
+        "src": "./package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "react-quiz/build"
+          "distDir": "./build"
         }
       },
       {
@@ -20,7 +20,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/react-quiz/$1"
+        "dest": "/$1"
       }
     ]
   }
