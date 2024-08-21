@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "react-quiz/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "react-quiz/build"
+        }
+      },
+      {
+        "src": "data/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/data/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/react-quiz/$1"
+      }
+    ]
+  }
