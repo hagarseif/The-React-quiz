@@ -47,6 +47,7 @@ function reducer(state, action) {
         ...state,
         index: action.payload,
         answer: null,
+        status: action.payload >=14?"finish":state.status
       };
     case "tick":
       return {
